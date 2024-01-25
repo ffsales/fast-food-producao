@@ -19,7 +19,7 @@ public class PedidoConsumer {
 
     private final PedidoService pedidoService;
 
-    @SqsListener("fastfood-pedido")
+    @SqsListener("notificacao-pedido-sync")
     public void recieveMessage(Message<PedidoDto> message) {
         PedidoDto pedidoDto = message.getPayload();
 
