@@ -14,6 +14,8 @@ import java.util.List;
 public class PedidoEntity {
 
     @Id
+    private String idObject;
+
     private String id;
 
     private List<ItemPedidoEntity> itens;
