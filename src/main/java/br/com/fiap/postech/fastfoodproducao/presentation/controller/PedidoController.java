@@ -29,7 +29,7 @@ public class PedidoController {
 
     private final PedidoService pedidoService;
 
-    @GetMapping
+    @GetMapping( produces = "application/json; charset=UTF-8")
     public ResponseEntity<ResponseSuccess> getAll(@RequestParam(required = false) Integer page,
                                                  @RequestParam(required = false) Integer size) {
 
@@ -40,13 +40,13 @@ public class PedidoController {
 
         var response = new ResponseSuccess(pedidos.getContent(), meta);
 
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.add("Content-Security-Policy", "default-src 'self'");
-        responseHeaders.add("X-Content-Type-Options", "nosniff");
-        responseHeaders.add("Content-Type", "application/json");
+//        HttpHeaders responseHeaders = new HttpHeaders();
+//        responseHeaders.add("Content-Security-Policy", "default-src 'self'");
+//        responseHeaders.add("X-Content-Type-Options", "nosniff");
+//        responseHeaders.add("Content-Type", "application/json");
 
         return ResponseEntity.ok()
-                .headers(responseHeaders)
+//                .headers(responseHeaders)
                 .body(response);
     }
 
